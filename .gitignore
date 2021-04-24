@@ -1,0 +1,12 @@
+node_modules/
+build/
+out/
+
+.DS_Store
+
+*.log
+**/target/
+
+.vscode
+
+neardev/

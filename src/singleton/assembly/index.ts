@@ -11,7 +11,7 @@ export class Contract {
 
   // read the given key from account (contract) storage
   read(key: string): string {
-    if (storage.hasKey(key)) {
+    if (isKeyInStorage(key)) {
       return `✅ Key [ ${key} ] has value [ ${storage.getString(key)!} ]`
     } else {
       return `🚫 Key [ ${key} ] not found in storage. ( ${this.storageReport()} )`
@@ -29,4 +29,25 @@ export class Contract {
   private storageReport(): string {
     return `storage [ ${Context.storageUsage} bytes ]`
   }
+}
+
+/**
+ * This function exists only to avoid a compiler error
+ *
+
+ERROR TS2339: Property 'contains' does not exist on type 'src/singleton/assembly/index/Contract'.
+
+     return this.contains(key);
+                 ~~~~~~~~
+ in ~lib/near-sdk-core/storage.ts(119,17)
+
+/Users/sherif/Documents/code/near/_projects/edu.t3/starter--near-sdk-as/node_modules/asbuild/dist/main.js:6
+        throw err;
+        ^
+
+ * @param key string key in account storage
+ * @returns boolean indicating whether key exists
+ */
+function isKeyInStorage(key: string): bool {
+  return storage.hasKey(key)
 }

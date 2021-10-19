@@ -123,7 +123,6 @@ export BENEFICIARY=<your-account-here>   # this account receives contract accoun
   24:45 Review and summary
   ```
 
-
 ## The file system
 
 ```sh
@@ -155,5 +154,15 @@ export BENEFICIARY=<your-account-here>   # this account receives contract accoun
 │   ├── tsconfig.json                  # Typescript configuration
 │   └── utils.ts                       # common contract utility functions
 └── yarn.lock                          # project manifest version lock
+```
 
+You may clone this repo to get started OR create everything from scratch.
+
+Please note that, in order to create the AssemblyScript and tests folder structure, you may use the command `asp --init` which will create the following folders and files:
+
+```
+./assembly/
+./assembly/tests/
+./assembly/tests/example.spec.ts
+./assembly/tests/as-pect.d.ts
 ```

@@ -1,6 +1,5 @@
 {
-  "workspaces": [
-    "src/simple",
-    "src/singleton"
-  ]
+    "workspaces": [
+        "src/yatzy"
+    ]
 }

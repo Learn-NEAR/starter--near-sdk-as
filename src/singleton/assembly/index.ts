@@ -18,13 +18,27 @@ export class Contract {
     }
   }
 
-  // write the given value at the given key to account (contract) storage
+  /**
+  write the given value at the given key to account (contract) storage
+  ---
+  note: this is what account storage will look like AFTER the write() method is called the first time
+  ╔════════════════════════════════╤══════════════════════════════════════════════════════════════════════════════════╗
+  ║                            key │ value                                                                            ║
+  ╟────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────╢
+  ║                          STATE │ {                                                                                ║
+  ║                                │   "message": "data was saved"                                                    ║
+  ║                                │ }                                                                                ║
+  ╟────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────╢
+  ║                       some-key │ some value                                                                       ║
+  ╚════════════════════════════════╧══════════════════════════════════════════════════════════════════════════════════╝
+   */
   @mutateState()
   write(key: string, value: string): string {
     storage.set(key, value)
     this.message = 'data was saved' // this is why we need the deorator @mutateState() above the method name
     return `✅ Data saved. ( ${this.storageReport()} )`
   }
+
 
   // private helper method used by read() and write() above
   private storageReport(): string {

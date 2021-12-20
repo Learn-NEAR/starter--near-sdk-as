@@ -9,7 +9,7 @@ echo "Step 1: Build the contract (may take a few seconds)"
 echo ---------------------------------------------------------
 echo
 
-yarn build:release
+yarn build
 
 echo
 echo
@@ -20,11 +20,11 @@ echo "(edit scripts/1.dev-deploy.sh to deploy other contract)"
 echo ---------------------------------------------------------
 echo
 
-# comment out the line below to deploy the other example contract
-near dev-deploy ./build/release/simple.wasm
+# uncomment out the line below to deploy the other example contract
+# near dev-deploy ./build/debug/simple.wasm
 
-# uncomment the line below to deploy the other example contract
-# near dev-deploy ./build/release/singleton.wasm
+# comment the line below to deploy the other example contract
+near dev-deploy ./build/debug/singleton.wasm
 
 echo
 echo

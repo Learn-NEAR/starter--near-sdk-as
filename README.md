@@ -68,6 +68,8 @@ export class Contract {
 
 (see below for video recordings of each of the following steps)
 
+INSTALL `NEAR CLI` first like this: `npm i -g near-cli`
+
 1. clone this repo to a local folder
 2. run `yarn`
 3. run `./scripts/1.dev-deploy.sh`

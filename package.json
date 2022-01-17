@@ -14,9 +14,7 @@
   "author": "hello@near.org",
   "license": "ISC",
   "devDependencies": {
-    "near-sdk-as": "^3.1.0"
-  },
-  "dependencies": {
+    "near-sdk-as": "^3.1.0",
     "near-cli": "^3.1.0"
   }
 }

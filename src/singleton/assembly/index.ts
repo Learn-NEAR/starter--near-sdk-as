@@ -35,7 +35,7 @@ export class Contract {
   @mutateState()
   write(key: string, value: string): string {
     storage.set(key, value)
-    this.message = 'data was saved' // this is why we need the deorator @mutateState() above the method name
+    this.message = 'data was saved' // this is why we need the decorator @mutateState() above the method name
     return `✅ Data saved. ( ${this.storageReport()} )`
   }
 
